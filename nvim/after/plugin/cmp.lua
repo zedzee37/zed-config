@@ -1,4 +1,5 @@
 local cmp = require'cmp'
+language_servers = { "clangd", "pylsp", "quick_lint_js", "gopls", "zls", "rust_analyzer", "cmake", "nim_langserver"}
 
   cmp.setup({
     snippet = {
@@ -66,39 +67,12 @@ local cmp = require'cmp'
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['clangd'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['lua_ls'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['basedpyright'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['quick_lint_js'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['gopls'].setup {
-    capabilities = capabilities
-    }
-require('lspconfig')['zls'].setup {
-    capabilities = capabilities
-}
-require('lspconfig')['rust_analyzer'].setup {
-    capabilities = capabilities
-}
-require('lspconfig')['csharp_ls'].setup {
-    capabilities = capabilities
-}
-require('lspconfig')['gdscript'].setup {
-    capabilities = capabilities
-}
-require('lspconfig')['cmake'].setup {
-    capabilities = capabilities
-}
-require('lspconfig')['nim_langserver'].setup {
-    capabilities = capabilities
-}
-require('lspconfig')['glsl_analyzer'].setup {
-    capabilities = capabilities
-}
+
+  local lspconfig = require 'lspconfig'
+
+  for _, language in pairs(language_servers) do
+      lspconfig[language].setup {
+          capabilities = capabilities
+      }
+    end
+      

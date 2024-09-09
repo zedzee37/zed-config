@@ -1,7 +1,8 @@
+language_servers = { "clangd", "pylsp", "quick_lint_js", "gopls", "zls", "rust_analyzer", "cmake", "nim_langserver"}
+
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd", "basedpyright", "quick_lint_js", "gopls", "zls", "rust_analyzer", "csharp_ls", "cmake", "nim_langserver", "glsl_analyzer", "luau_lsp"}
-})
+    ensure_installed = language_servers })
 
 local on_attach = function(_, _)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
@@ -13,43 +14,11 @@ local on_attach = function(_, _)
 end
 
 local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup {
-    on_attach = on_attach
-}
-lspconfig.clangd.setup {
-    on_attach = on_attach
-}
-lspconfig.basedpyright.setup {
-    on_attach = on_attach
-}
-lspconfig.quick_lint_js.setup {
-    on_attach = on_attach
-}
-lspconfig.gopls.setup {
-    on_attach = on_attach
-}
-lspconfig.zls.setup {
-    on_attach = on_attach
-}
-lspconfig.rust_analyzer.setup {
-    on_attach = on_attach
-}
-lspconfig.csharp_ls.setup {
-    on_attach = on_attach
-}
-lspconfig.gdscript.setup {
-    on_attach = on_attach
-}
-lspconfig.cmake.setup {
-    on_attach = on_attach
-}
-lspconfig.nim_langserver.setup {
-    on_attach = on_attach
-}
-lspconfig.glsl_analyzer.setup {
-    on_attach = on_attach
-}
-lspconfig.luau_lsp.setup {
-    on_attach = on_attach
-}
 
+for _, language in pairs(language_servers) do
+    lspconfig[language].setup {
+        on_attach = on_attach
+    }
+end
+
+return language_servers

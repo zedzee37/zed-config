@@ -9,5 +9,11 @@ format_on_save.setup({
         h = formatters.shell({
             cmd = { "clang-format" }
         }),
+        go = formatters.shell({
+            cmd = { "gofmt" }
+        }),
+        python = {
+            formatters.black
+        },
     }
 })

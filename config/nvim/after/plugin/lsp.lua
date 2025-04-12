@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "lemminx" },
+    ensure_installed = { "lua_ls", "clangd", "gopls", "rust_analyzer", "pyright" },
 }
 
 -- Reserve a space in the gutter

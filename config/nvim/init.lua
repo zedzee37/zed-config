@@ -1,6 +1,10 @@
 require("config.lazy")
 require("config.remap")
 
+vim.diagnostic.config({
+    virtual_text = true
+})
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

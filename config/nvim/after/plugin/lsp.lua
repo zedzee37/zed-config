@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "clangd", "gopls", "rust_analyzer", "pyright" },
+    ensure_installed = { "lua_ls", "gopls", "rust_analyzer", "jedi_language_server" },
 }
 
 -- Reserve a space in the gutter
@@ -49,7 +49,7 @@ lspconfig.lua_ls.setup({
         }
     }
 })
-lspconfig.pyright.setup({})
+lspconfig.jedi_language_server.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.gopls.setup({})
 lspconfig.lemminx.setup({

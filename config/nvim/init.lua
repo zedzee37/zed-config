@@ -43,5 +43,9 @@ end
 
 
 vim.lsp.enable({
-	"clangd"
+	"clangd",
+	"basedpyright",
+	"rust_analyzer",
+	"zls",
+	"gopls",
 })

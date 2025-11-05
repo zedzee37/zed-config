@@ -1,5 +1,5 @@
-require("config.lazy")
 require("config.remap")
+require("config.lazy")
 
 vim.diagnostic.config({
     virtual_text = true
@@ -40,3 +40,8 @@ local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"
 if not vim.loop.fs_stat(pipepath) then
   vim.fn.serverstart(pipepath)
 end
+
+
+vim.lsp.enable({
+	"clangd"
+})

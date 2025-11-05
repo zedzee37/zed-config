@@ -48,4 +48,5 @@ vim.lsp.enable({
 	"rust_analyzer",
 	"zls",
 	"gopls",
+	"gdscript",
 })

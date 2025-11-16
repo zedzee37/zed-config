@@ -31,3 +31,30 @@ vim.keymap.set(
 "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
+-- terminal shenanigans
+
+
+local term_buf = nil
+
+function toggle_term_split()
+	if not term_buf or not vim.api.nvim_buf_is_valid(term_buf) then
+		vim.cmd("botright split | terminal")
+		term_buf = vim.api.nvim_get_current_buf()
+		return
+	end
+
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		if vim.api.nvim_win_get_buf(win) == term_buf then
+			vim.cmd("hide")
+			return
+		end
+	end
+
+	vim.cmd("botright sbuffer " .. term_buf)
+end
+
+vim.keymap.set("n", "<leader>t", toggle_term_split)
+
+-- leave terminal mode
+vim.keymap.set('t', '<leader><Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
+

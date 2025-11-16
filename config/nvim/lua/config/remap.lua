@@ -56,5 +56,5 @@ end
 vim.keymap.set("n", "<leader>t", toggle_term_split)
 
 -- leave terminal mode
-vim.keymap.set('t', '<leader><Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.keymap.set('t', '<A-q>', [[<C-\><C-n>]], { noremap = true, silent = true })
 

@@ -53,8 +53,8 @@ function toggle_term_split()
 	vim.cmd("botright sbuffer " .. term_buf)
 end
 
-vim.keymap.set("n", "<leader>t", toggle_term_split)
+vim.keymap.set("n", "<A-t>", toggle_term_split)
 
 -- leave terminal mode
-vim.keymap.set('t', '<A-q>', [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.keymap.set('t', '<A-t>', [[<C-\><C-n>]], { noremap = true, silent = true })
 

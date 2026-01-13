@@ -1,5 +1,5 @@
-require("config.remap")
 require("config.lazy")
+require("config.remap")
 
 vim.diagnostic.config({
     virtual_text = true
@@ -49,4 +49,14 @@ vim.lsp.enable({
 	"zls",
 	"gopls",
 	"gdscript",
+})
+
+vim.lsp.config("basedpyright", {
+	settings = {
+		basedpyright = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+		},
+	},
 })

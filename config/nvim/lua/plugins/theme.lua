@@ -1,1 +1,3 @@
-  return { 'kepano/flexoki-neovim', name = 'flexoki' }
+  return {
+	  "nyoom-engineering/oxocarbon.nvim"
+  }

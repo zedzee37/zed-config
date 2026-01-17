@@ -1,9 +1,11 @@
-require("config.remap")
 require("config.lazy")
+require("config.remap")
 
 vim.diagnostic.config({
     virtual_text = true
 })
+
+vim.opt.iskeyword:remove("_")
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -50,4 +52,14 @@ vim.lsp.enable({
 	"gopls",
 	"gdscript",
 	"csharp_ls",
+})
+
+vim.lsp.config("basedpyright", {
+	settings = {
+		basedpyright = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+		},
+	},
 })

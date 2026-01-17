@@ -49,4 +49,5 @@ vim.lsp.enable({
 	"zls",
 	"gopls",
 	"gdscript",
+	"csharp_ls",
 })

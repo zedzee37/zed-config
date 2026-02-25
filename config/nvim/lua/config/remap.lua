@@ -1,3 +1,5 @@
+local pretty_hover = require("pretty_hover")
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Dirbuf<CR>")
 vim.keymap.set("n", "<leader>pl", "o<Esc>pk")
@@ -7,6 +9,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>o", "o<Esc>")
 vim.keymap.set("n", "<leader>O", "o<Esc>k")
 vim.keymap.set("n", "<leader>P", "<leader>dp")
+vim.keymap.set("n", "K", function()
+	pretty_hover.hover()
+end)
 
 vim.keymap.set({"n", "v"}, "<C-T>", vim.cmd.tabnew)
 

@@ -3,6 +3,7 @@ local pretty_hover = require("pretty_hover")
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Dirbuf<CR>")
 vim.keymap.set("n", "<leader>pl", "o<Esc>pk")
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

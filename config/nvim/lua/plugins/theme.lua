@@ -13,6 +13,12 @@ return {
 				functions = { italic = false }, -- style for functions
 				variables = { italic = false }, -- style for variables
 			},
+			custom_highlights = function(highlights, palette)
+				return {
+					Identifier = { fg = palette.fg },
+					Constant = { fg = palette.fg }
+				}
+			end
 		}) -- calling setup is optional
         vim.cmd [[colorscheme tokyodark]]
     end,

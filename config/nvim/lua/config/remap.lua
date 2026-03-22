@@ -57,4 +57,4 @@ vim.keymap.set({"n", "v"}, "<A-8>", function() harpoon:list():select(8) end)
 vim.keymap.set({"n", "v"}, "<A-9>", function() harpoon:list():select(9) end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-
+vim.keymap.set("n", "<leader>e", vim.snippet.expand)

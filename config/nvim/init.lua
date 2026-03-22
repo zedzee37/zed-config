@@ -2,7 +2,8 @@ require("config.lazy")
 require("config.remap")
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = false,
+	virtual_lines = true
 })
 
 vim.opt.nu = true
@@ -33,6 +34,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
+vim.opt.colorcolumn = '120'
 
 -- godot stuff
 local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"

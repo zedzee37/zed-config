@@ -36,6 +36,11 @@ vim.opt.updatetime = 50
 vim.g.mapleader = " "
 vim.opt.colorcolumn = '120'
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
+vim.opt.foldlevelstart = 99
+
 -- godot stuff
 local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"
 if not vim.loop.fs_stat(pipepath) then

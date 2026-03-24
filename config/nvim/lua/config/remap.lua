@@ -14,18 +14,18 @@ vim.keymap.set("n", "K", function()
 	pretty_hover.hover()
 end)
 
-vim.keymap.set({"n", "v"}, "<C-T>", vim.cmd.tabnew)
+vim.keymap.set({ "n", "v" }, "<C-T>", vim.cmd.tabnew)
 
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "P", [["+p]])
+vim.keymap.set({ "n", "v" }, "P", [["+p]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set(
-"n",
-"<leader>go",
-"oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
+	"n",
+	"<leader>go",
+	"oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
 -- leave terminal mode
@@ -46,15 +46,19 @@ local harpoon = require("harpoon")
 harpoon:setup()
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set({"n", "v"}, "<A-1>", function() harpoon:list():select(1) end)
-vim.keymap.set({"n", "v"}, "<A-2>", function() harpoon:list():select(2) end)
-vim.keymap.set({"n", "v"}, "<A-3>", function() harpoon:list():select(3) end)
-vim.keymap.set({"n", "v"}, "<A-4>", function() harpoon:list():select(4) end)
-vim.keymap.set({"n", "v"}, "<A-5>", function() harpoon:list():select(5) end)
-vim.keymap.set({"n", "v"}, "<A-6>", function() harpoon:list():select(6) end)
-vim.keymap.set({"n", "v"}, "<A-7>", function() harpoon:list():select(7) end)
-vim.keymap.set({"n", "v"}, "<A-8>", function() harpoon:list():select(8) end)
-vim.keymap.set({"n", "v"}, "<A-9>", function() harpoon:list():select(9) end)
+vim.keymap.set({ "n", "v" }, "<A-1>", function() harpoon:list():select(1) end)
+vim.keymap.set({ "n", "v" }, "<A-2>", function() harpoon:list():select(2) end)
+vim.keymap.set({ "n", "v" }, "<A-3>", function() harpoon:list():select(3) end)
+vim.keymap.set({ "n", "v" }, "<A-4>", function() harpoon:list():select(4) end)
+vim.keymap.set({ "n", "v" }, "<A-5>", function() harpoon:list():select(5) end)
+vim.keymap.set({ "n", "v" }, "<A-6>", function() harpoon:list():select(6) end)
+vim.keymap.set({ "n", "v" }, "<A-7>", function() harpoon:list():select(7) end)
+vim.keymap.set({ "n", "v" }, "<A-8>", function() harpoon:list():select(8) end)
+vim.keymap.set({ "n", "v" }, "<A-9>", function() harpoon:list():select(9) end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-vim.keymap.set("n", "<leader>e", vim.snippet.expand)
+vim.keymap.set("n", "<leader>eh", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_prev)
+
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)

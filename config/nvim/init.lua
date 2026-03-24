@@ -2,8 +2,8 @@ require("config.lazy")
 require("config.remap")
 
 vim.diagnostic.config({
-    virtual_text = false,
-	virtual_lines = true
+    virtual_text = true,
+	virtual_lines = false
 })
 
 vim.opt.nu = true

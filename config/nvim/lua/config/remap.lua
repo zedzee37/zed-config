@@ -14,9 +14,6 @@ vim.keymap.set("n", "K", function()
 	pretty_hover.hover()
 end)
 
-vim.keymap.set({ "n", "v" }, "<C-T>", vim.cmd.tabnew)
-
-
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "P", [["+p]])
@@ -46,8 +43,7 @@ local harpoon = require("harpoon")
 harpoon:setup()
 
 vim.keymap.set({"n", "v"}, "<C-T>", function()
-	local file_path = vim.api.nvim_buf_get_name(0)
-	vim.cmd("tabnew "..file_path)
+	vim.cmd("tab split")
 end)
 vim.keymap.set({"n", "v"}, "<A-1>", "1gt")
 vim.keymap.set({"n", "v"}, "<A-2>", "2gt")

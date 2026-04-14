@@ -45,7 +45,10 @@ vim.keymap.set('n', '<leader>c', dap.continue, { desc = 'Debug: Start/Continue' 
 local harpoon = require("harpoon")
 harpoon:setup()
 
-vim.keymap.set({"n", "v"}, "<C-T>", vim.cmd.tabnew)
+vim.keymap.set({"n", "v"}, "<C-T>", function()
+	local file_path = vim.api.nvim_buf_get_name(0)
+	vim.cmd("tabnew "..file_path)
+end)
 vim.keymap.set({"n", "v"}, "<A-1>", "1gt")
 vim.keymap.set({"n", "v"}, "<A-2>", "2gt")
 vim.keymap.set({"n", "v"}, "<A-3>", "3gt")

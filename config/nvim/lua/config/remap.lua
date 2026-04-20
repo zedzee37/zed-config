@@ -25,8 +25,6 @@ vim.keymap.set(
 	"oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
--- leave terminal mode
-vim.keymap.set('t', '<A-t>', [[<C-\><C-n>]], { noremap = true, silent = true })
 
 local dap = require("dap")
 
@@ -60,3 +58,37 @@ vim.keymap.set("n", "<leader>ep", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>en", vim.diagnostic.goto_prev)
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+vim.keymap.set("n", "<C-b>", "<C-b>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+
+local term_window = -1
+local prev_win = 0
+local term_buf = -1
+local term_win = -1
+
+local function toggle_terminal()
+    if vim.api.nvim_win_is_valid(term_win) then
+        vim.api.nvim_win_hide(term_win)
+        return
+    end
+
+    if not vim.api.nvim_buf_is_valid(term_buf) then
+        term_buf = vim.api.nvim_create_buf(false, true)
+    end
+
+    term_win = vim.api.nvim_open_win(term_buf, true, {
+        split = 'below',
+        height = 15,
+    })
+
+    if vim.bo[term_buf].buftype ~= 'terminal' then
+        vim.cmd("terminal")
+    end
+
+    vim.cmd("startinsert")
+end
+
+vim.keymap.set('n', '<A-t>', toggle_terminal) 
+vim.keymap.set('t', '<A-t>', toggle_terminal)
+vim.keymap.set('t', '<C-t>', [[<C-\><C-n>]], { noremap = true, silent = true })

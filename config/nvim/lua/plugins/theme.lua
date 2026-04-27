@@ -1,28 +1,28 @@
-return {
-    "tiagovla/tokyodark.nvim",
-    opts = {
-        -- custom options here
-    },
-    config = function(_, opts)
-        require("tokyodark").setup({
-			transparent_background = true,
-			styles = {
-				comments = { italic = false }, -- style for comments
-				keywords = { italic = false, }, -- style for keywords
-				identifiers = { italic = false }, -- style for identifiers
-				functions = { italic = false, bold = true }, -- style for functions
-				variables = { italic = false }, -- style for variables
-			},
-			custom_highlights = function(highlights, palette)
-				return {
-					Identifier = { fg = palette.fg },
-					Constant = { fg = palette.fg }
-				}
-			end
-		}) -- calling setup is optional
-        vim.cmd [[colorscheme tokyodark]]
-    end,
-}
+-- return {
+--     "tiagovla/tokyodark.nvim",
+--     opts = {
+--         -- custom options here
+--     },
+--     config = function(_, opts)
+--         require("tokyodark").setup({
+-- 			transparent_background = true,
+-- 			styles = {
+-- 				comments = { italic = false }, -- style for comments
+-- 				keywords = { italic = false, }, -- style for keywords
+-- 				identifiers = { italic = false }, -- style for identifiers
+-- 				functions = { italic = false, }, -- style for functions
+-- 				variables = { italic = false }, -- style for variables
+-- 			},
+-- 			custom_highlights = function(highlights, palette)
+-- 				return {
+-- 					Identifier = { fg = palette.fg },
+-- 					Constant = { fg = palette.fg }
+-- 				}
+-- 			end
+-- 		}) -- calling setup is optional
+--         vim.cmd [[colorscheme tokyodark]]
+--     end,
+-- }
 -- return {
 --   'thimc/gruber-darker.nvim',
 --   config = function()
@@ -42,18 +42,16 @@ return {
 -- 		vim.g.minimal_transparent_background = true
 -- 	end
 -- }
-
-
--- return {
---     "nickkadutskyi/jb.nvim",
---     lazy = false,
---     priority = 1000,
---     opts = {},
---     config = function()
---         require("jb").setup({transparent = true})
---         vim.cmd("colorscheme jb")
---     end,
--- }
+return {
+    "nickkadutskyi/jb.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+        require("jb").setup({transparent = true})
+        vim.cmd("colorscheme jb")
+    end,
+}
 -- return {
 -- 	"ellisonleao/gruvbox.nvim",
 -- 	priority = 1000,
@@ -80,6 +78,15 @@ return {
 --         require('gruber-darker').setup()
 --         vim.cmd('colorscheme gruber-darker')
 --     end,
+-- }
+-- return {
+-- 	"EdenEast/nightfox.nvim",
+-- 	config = function()
+-- 		require("nightfox").setup({
+-- 			transparent = true,
+-- 		})
+-- 		vim.cmd.colorscheme("nightfox")
+-- 	end
 -- }
 -- return {
 --     "Mofiqul/adwaita.nvim",

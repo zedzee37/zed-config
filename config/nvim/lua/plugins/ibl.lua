@@ -4,6 +4,8 @@ return {
 	---@module "ibl"
 	---@type ibl.config
 	opts = {
-		show_start = false
+		scope = {
+			show_start = false
+		}
 	},
 }

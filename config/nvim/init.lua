@@ -47,7 +47,6 @@ if not vim.loop.fs_stat(pipepath) then
   vim.fn.serverstart(pipepath)
 end
 
-
 vim.lsp.enable({
 	"clangd",
 	"basedpyright",

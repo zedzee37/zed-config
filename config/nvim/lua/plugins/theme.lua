@@ -42,16 +42,16 @@
 -- 		vim.g.minimal_transparent_background = true
 -- 	end
 -- }
-return {
-    "nickkadutskyi/jb.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-        require("jb").setup({transparent = true})
-        vim.cmd("colorscheme jb")
-    end,
-}
+-- return {
+--     "nickkadutskyi/jb.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--         require("jb").setup({transparent = true})
+--         vim.cmd("colorscheme jb")
+--     end,
+-- }
 -- return {
 -- 	"ellisonleao/gruvbox.nvim",
 -- 	priority = 1000,
@@ -99,17 +99,26 @@ return {
 --         vim.cmd('colorscheme adwaita')
 --     end
 -- }
--- return {
--- 	"Shatur/neovim-ayu",
--- 	config = function()
--- 		require("ayu").setup({
--- 			overrides = {
--- 					
--- 			}
--- 		})
--- 		vim.cmd.colorscheme("ayu")
--- 	end
--- }
+return {
+	"Shatur/neovim-ayu",
+	config = function()
+		require("ayu").setup({
+			overrides = {
+				Normal = { bg = "None" },
+				ColorColumn = { bg = "None" },
+				SignColumn = { bg = "None" },
+				Folded = { bg = "None" },
+				FoldColumn = { bg = "None" },
+				-- CursorLine = { bg = "None" },
+				-- CursorColumn = { bg = "None" },
+				VertSplit = { bg = "None" },
+				NonText = { fg = "#5c6773" }, 
+                Whitespace = { fg = "#5c6773" },
+			}
+		})
+		vim.cmd.colorscheme("ayu")
+	end
+}
 --
 -- return {
 -- 	"nyoom-engineering/oxocarbon.nvim",

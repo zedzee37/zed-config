@@ -92,18 +92,74 @@
 --         vim.cmd [[colorscheme tokyodark]]
 --     end,
 -- }
+-- return {
+--   "blazkowolf/gruber-darker.nvim" ,
+--   config = function()
+--     require('gruber-darker').setup({
+--       -- OPTIONAL
+--       transparent = true, -- removes the background
+--       -- underline = false, -- disables underline fonts
+--       -- bold = false, -- disables bold fonts
+--     })
+--     vim.cmd.colorscheme('gruber-darker')
+--   end,
+--
+-- }
+--
 return {
-  "blazkowolf/gruber-darker.nvim" ,
-  config = function()
-    require('gruber-darker').setup({
-      -- OPTIONAL
-      transparent = true, -- removes the background
-      -- underline = false, -- disables underline fonts
-      -- bold = false, -- disables bold fonts
-    })
-    vim.cmd.colorscheme('gruber-darker')
-  end,
+	"catppuccin/nvim",
+	name = "catppuccin",
+	opts = {
+		term_colors = true,
+		transparent_background = true,
+		styles = {
+			comments = {},
+			conditionals = {},
+			loops = {},
+			functions = {},
+			keywords = {},
+			strings = {},
+			variables = {},
+			numbers = {},
+			booleans = {},
+			properties = {},
+			types = {},
+		},
+		color_overrides = {
+			mocha = {
+				base = "#000000",
+				mantle = "#000000",
+				crust = "#000000",
+			},
+		},
+		integrations = {
+			telescope = {
+				enabled = true,
+			},
+			dropbar = {
+				enabled = true,
+				color_mode = true,
+			},
+		},
+	},
+	config = function()
+		vim.cmd.colorscheme('catppuccin')
+	end
 }
+-- return {
+-- 	"He4eT/desolate.nvim",
+-- 	dependencies = { 'rktjmp/lush.nvim' },
+-- 	config = function()
+-- 		vim.g.desolate_bg = "#000000"
+-- 		vim.g.desolate_fg = "#ffffff"
+-- 		vim.g.desolate_h = 351
+-- 		vim.g.desolate_s = 86.3
+-- 		vim.g.desolate_l = 51.7
+
+-- 		vim.g.desolate_identifier = "#ffffff"
+-- 		vim.cmd.colorscheme('desolate')
+-- 	end
+-- }
 -- return {
 -- 	'Yazeed1s/minimal.nvim',
 -- 	config = function()

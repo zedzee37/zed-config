@@ -1,37 +1,37 @@
--- return {
---     "dgox16/oldworld.nvim",
---     lazy = false,
---     priority = 1000,
--- 	config = function()
--- 		require("oldworld").setup({
--- 			variant = "oled",
--- 			styles = {
--- 				comments = { italic = false, },
--- 				keywords = { italic = false, },
--- 				identifiers = { italic = false, },
--- 				functions = { italic = false, },
--- 				variables = { italic = false, },
--- 				booleans = { italic = false, },
--- 			},
--- 		});
--- 		vim.cmd.colorscheme("oldworld")
--- 		local hl_groups = vim.api.nvim_get_hl(0, {})
+return {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+	config = function()
+		require("oldworld").setup({
+			variant = "oled",
+			styles = {
+				comments = { italic = false, },
+				keywords = { italic = false, },
+				identifiers = { italic = false, },
+				functions = { italic = false, },
+				variables = { italic = false, },
+				booleans = { italic = false, },
+			},
+		});
+		vim.cmd.colorscheme("oldworld")
+		local hl_groups = vim.api.nvim_get_hl(0, {})
 
--- 		for key, hl_group in pairs(hl_groups) do
--- 			if hl_group.italic then
--- 				vim.api.nvim_set_hl(0, key, vim.tbl_extend("force", hl_group, {italic = false}))
--- 			end
--- 		end
+		for key, hl_group in pairs(hl_groups) do
+			if hl_group.italic then
+				vim.api.nvim_set_hl(0, key, vim.tbl_extend("force", hl_group, {italic = false}))
+			end
+		end
 
--- 		local float_bg = "#161617" 
+		local float_bg = "#161617" 
 
---         vim.api.nvim_set_hl(0, "NormalFloat", { bg = float_bg })
---         vim.api.nvim_set_hl(0, "FloatBorder", { bg = float_bg, fg = "#505050" })
---         
---         vim.api.nvim_set_hl(0, "Pmenu", { bg = float_bg }) 
---         vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#333333", bold = true }) 
--- 	end
--- }
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = float_bg })
+        vim.api.nvim_set_hl(0, "FloatBorder", { bg = float_bg, fg = "#505050" })
+
+        vim.api.nvim_set_hl(0, "Pmenu", { bg = float_bg }) 
+        vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#333333", bold = true }) 
+	end
+}
 -- return {
 -- 	'https://github.com/vague-theme/vague.nvim',
 -- 	config = function()
@@ -103,54 +103,54 @@
 --     })
 --     vim.cmd.colorscheme('gruber-darker')
 --   end,
---
+
 -- }
 --
-return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	config = function()
-require("catppuccin").setup({
-            term_colors = false,
-            transparent_background = true,
-            no_italic = true,
-            no_bold = true,
-            styles = {
-                comments = {},
-                conditionals = {},
-                loops = {},
-                functions = {},
-                keywords = {},
-                strings = {},
-                variables = {},
-                numbers = {},
-                booleans = {},
-                properties = {},
-                types = {},
-            },
-            -- This is where we darken the selection color
-            custom_highlights = function(colors)
-                return {
-                    Visual = { bg = "#28283d" }, 
-                    Search = { bg = "#45475a", fg = colors.yellow },
-                    CurSearch = { bg = colors.yellow, fg = "#000000" },
-                }
-            end,
-            color_overrides = {
-                mocha = {
-                    -- base = "#000000",
-                },
-            },
-            integrations = {
-                telescope = { enabled = true },
-                dropbar = { enabled = true, color_mode = true },
-            },
-        })
+-- return {
+-- 	"catppuccin/nvim",
+-- 	name = "catppuccin",
+-- 	config = function()
+-- require("catppuccin").setup({
+--             term_colors = false,
+--             transparent_background = true,
+--             no_italic = true,
+--             no_bold = true,
+--             styles = {
+--                 comments = {},
+--                 conditionals = {},
+--                 loops = {},
+--                 functions = {},
+--                 keywords = {},
+--                 strings = {},
+--                 variables = {},
+--                 numbers = {},
+--                 booleans = {},
+--                 properties = {},
+--                 types = {},
+--             },
+--             -- This is where we darken the selection color
+--             custom_highlights = function(colors)
+--                 return {
+--                     Visual = { bg = "#28283d" }, 
+--                     Search = { bg = "#45475a", fg = colors.yellow },
+--                     CurSearch = { bg = colors.yellow, fg = "#000000" },
+--                 }
+--             end,
+--             color_overrides = {
+--                 mocha = {
+--                     -- base = "#000000",
+--                 },
+--             },
+--             integrations = {
+--                 telescope = { enabled = true },
+--                 dropbar = { enabled = true, color_mode = true },
+--             },
+--         })
 
-        vim.cmd.colorscheme('catppuccin')
-		vim.cmd.colorscheme('catppuccin')
-	end
-}
+--         vim.cmd.colorscheme('catppuccin')
+-- 		vim.cmd.colorscheme('catppuccin')
+-- 	end
+-- }
 -- return {
 -- 	"He4eT/desolate.nvim",
 -- 	dependencies = { 'rktjmp/lush.nvim' },

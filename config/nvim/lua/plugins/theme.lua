@@ -109,40 +109,45 @@
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
-	opts = {
-		term_colors = true,
-		transparent_background = true,
-		styles = {
-			comments = {},
-			conditionals = {},
-			loops = {},
-			functions = {},
-			keywords = {},
-			strings = {},
-			variables = {},
-			numbers = {},
-			booleans = {},
-			properties = {},
-			types = {},
-		},
-		color_overrides = {
-			mocha = {
-				base = "#000000",
-				mantle = "#000000",
-				crust = "#000000",
-			},
-		},
-		integrations = {
-			telescope = {
-				enabled = true,
-			},
-			dropbar = {
-				enabled = true,
-				color_mode = true,
-			},
-		},
-	},
 	config = function()
+require("catppuccin").setup({
+            term_colors = false,
+            transparent_background = true,
+            no_italic = true,
+            no_bold = true,
+            styles = {
+                comments = {},
+                conditionals = {},
+                loops = {},
+                functions = {},
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {},
+            },
+            -- This is where we darken the selection color
+            custom_highlights = function(colors)
+                return {
+                    Visual = { bg = "#28283d" }, 
+                    Search = { bg = "#45475a", fg = colors.yellow },
+                    CurSearch = { bg = colors.yellow, fg = "#000000" },
+                }
+            end,
+            color_overrides = {
+                mocha = {
+                    -- base = "#000000",
+                },
+            },
+            integrations = {
+                telescope = { enabled = true },
+                dropbar = { enabled = true, color_mode = true },
+            },
+        })
+
+        vim.cmd.colorscheme('catppuccin')
 		vim.cmd.colorscheme('catppuccin')
 	end
 }

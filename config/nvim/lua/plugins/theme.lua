@@ -1,37 +1,37 @@
-return {
-    "dgox16/oldworld.nvim",
-    lazy = false,
-    priority = 1000,
-	config = function()
-		require("oldworld").setup({
-			variant = "oled",
-			styles = {
-				comments = { italic = false, },
-				keywords = { italic = false, },
-				identifiers = { italic = false, },
-				functions = { italic = false, },
-				variables = { italic = false, },
-				booleans = { italic = false, },
-			},
-		});
-		vim.cmd.colorscheme("oldworld")
-		local hl_groups = vim.api.nvim_get_hl(0, {})
+-- return {
+--     "dgox16/oldworld.nvim",
+--     lazy = false,
+--     priority = 1000,
+-- 	config = function()
+-- 		require("oldworld").setup({
+-- 			variant = "oled",
+-- 			styles = {
+-- 				comments = { italic = false, },
+-- 				keywords = { italic = false, },
+-- 				identifiers = { italic = false, },
+-- 				functions = { italic = false, },
+-- 				variables = { italic = false, },
+-- 				booleans = { italic = false, },
+-- 			},
+-- 		});
+-- 		vim.cmd.colorscheme("oldworld")
+-- 		local hl_groups = vim.api.nvim_get_hl(0, {})
 
-		for key, hl_group in pairs(hl_groups) do
-			if hl_group.italic then
-				vim.api.nvim_set_hl(0, key, vim.tbl_extend("force", hl_group, {italic = false}))
-			end
-		end
+-- 		for key, hl_group in pairs(hl_groups) do
+-- 			if hl_group.italic then
+-- 				vim.api.nvim_set_hl(0, key, vim.tbl_extend("force", hl_group, {italic = false}))
+-- 			end
+-- 		end
 
-		local float_bg = "#161617" 
+-- 		local float_bg = "#161617" 
 
-        vim.api.nvim_set_hl(0, "NormalFloat", { bg = float_bg })
-        vim.api.nvim_set_hl(0, "FloatBorder", { bg = float_bg, fg = "#505050" })
+--         vim.api.nvim_set_hl(0, "NormalFloat", { bg = float_bg })
+--         vim.api.nvim_set_hl(0, "FloatBorder", { bg = float_bg, fg = "#505050" })
 
-        vim.api.nvim_set_hl(0, "Pmenu", { bg = float_bg }) 
-        vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#333333", bold = true }) 
-	end
-}
+--         vim.api.nvim_set_hl(0, "Pmenu", { bg = float_bg }) 
+--         vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#333333", bold = true }) 
+-- 	end
+-- }
 -- return {
 -- 	'https://github.com/vague-theme/vague.nvim',
 -- 	config = function()
@@ -93,17 +93,18 @@ return {
 --     end,
 -- }
 -- return {
---   "blazkowolf/gruber-darker.nvim" ,
+--   "thimc/gruber-darker.nvim" ,
 --   config = function()
 --     require('gruber-darker').setup({
 --       -- OPTIONAL
 --       transparent = true, -- removes the background
 --       -- underline = false, -- disables underline fonts
 --       -- bold = false, -- disables bold fonts
+-- 	  -- italic = false,
+-- 	  -- bold = false
 --     })
---     vim.cmd.colorscheme('gruber-darker')
---   end,
-
+--     -- vim.cmd.colorscheme('gruber-darker')
+--   end
 -- }
 --
 -- return {
@@ -182,17 +183,18 @@ return {
 --         vim.cmd("colorscheme jb")
 --     end,
 -- }
--- return {
--- 	"ellisonleao/gruvbox.nvim",
--- 	priority = 1000,
--- 	config = function()
--- 		vim.o.background = "dark"
--- 		vim.cmd([[colorscheme gruvbox]])
--- 		require("gruvbox").setup({
--- 			transparent_mode = true,
--- 		})
--- 	end
--- }
+return {
+	"ellisonleao/gruvbox.nvim",
+	priority = 1000,
+	config = function()
+		vim.o.background = "dark"
+		require("gruvbox").setup({
+			bold = false,
+			transparent_mode = true,
+		})
+		vim.cmd([[colorscheme gruvbox]])
+	end
+}
 --
 -- return {
 -- 	"blazkowolf/gruber-darker.nvim",

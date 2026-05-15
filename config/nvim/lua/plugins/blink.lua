@@ -26,8 +26,7 @@ return {
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			-- set to 'none' to disable the 'default' preset
-			preset = 'none',
-			['<Tab>'] = { "show", "accept" }
+			preset = 'super-tab',
 		},
 
 		appearance = {
@@ -38,9 +37,9 @@ return {
 
 		-- (Default) Only show the documentation popup when manually triggered
 		completion = {
-			menu = {
-				auto_show = false,
-			},
+			-- menu = {
+			-- 	auto_show = false,
+			-- },
 			documentation = {
 				auto_show = false,
 			},

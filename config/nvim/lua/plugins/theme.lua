@@ -183,18 +183,18 @@
 --         vim.cmd("colorscheme jb")
 --     end,
 -- }
-return {
-	"ellisonleao/gruvbox.nvim",
-	priority = 1000,
-	config = function()
-		vim.o.background = "dark"
-		require("gruvbox").setup({
-			bold = false,
-			transparent_mode = true,
-		})
-		vim.cmd([[colorscheme gruvbox]])
-	end
-}
+-- return {
+-- 	"ellisonleao/gruvbox.nvim",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		vim.o.background = "dark"
+-- 		require("gruvbox").setup({
+-- 			bold = false,
+-- 			transparent_mode = true,
+-- 		})
+-- 		vim.cmd([[colorscheme gruvbox]])
+-- 	end
+-- }
 --
 -- return {
 -- 	"blazkowolf/gruber-darker.nvim",
@@ -207,9 +207,9 @@ return {
 --     priority = 1000,
 --     lazy = false,
 --     config = function()
---         require('gruber-darker').setup()
---         vim.cmd('colorscheme gruber-darker')
---     end,
+        -- require('gruber-darker').setup()
+        -- vim.cmd('colorscheme gruber-darker')
+    -- end,
 -- }
 -- return {
 -- 	"EdenEast/nightfox.nvim",
@@ -231,26 +231,26 @@ return {
 --         vim.cmd('colorscheme adwaita')
 --     end
 -- }
--- return {
--- 	"Shatur/neovim-ayu",
--- 	config = function()
--- 		require("ayu").setup({
--- 			overrides = {
--- 				Normal = { bg = "None" },
--- 				ColorColumn = { bg = "None" },
--- 				SignColumn = { bg = "None" },
--- 				Folded = { bg = "None" },
--- 				FoldColumn = { bg = "None" },
--- 				-- CursorLine = { bg = "None" },
--- 				-- CursorColumn = { bg = "None" },
--- 				VertSplit = { bg = "None" },
--- 				NonText = { fg = "#5c6773" }, 
---                 Whitespace = { fg = "#5c6773" },
--- 			}
--- 		})
--- 		vim.cmd.colorscheme("ayu")
--- 	end
--- }
+return {
+	"Shatur/neovim-ayu",
+	config = function()
+		require("ayu").setup({
+			overrides = {
+				Normal = { bg = "None" },
+				ColorColumn = { bg = "None" },
+				SignColumn = { bg = "None" },
+				Folded = { bg = "None" },
+				FoldColumn = { bg = "None" },
+				-- CursorLine = { bg = "None" },
+				-- CursorColumn = { bg = "None" },
+				VertSplit = { bg = "None" },
+				NonText = { fg = "#5c6773" }, 
+                Whitespace = { fg = "#5c6773" },
+			}
+		})
+		vim.cmd.colorscheme("ayu")
+	end
+}
 --
 -- return {
 -- 	"nyoom-engineering/oxocarbon.nvim",

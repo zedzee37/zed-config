@@ -107,51 +107,51 @@
 --   end
 -- }
 --
--- return {
--- 	"catppuccin/nvim",
--- 	name = "catppuccin",
--- 	config = function()
--- require("catppuccin").setup({
---             term_colors = false,
---             transparent_background = true,
---             no_italic = true,
---             no_bold = true,
---             styles = {
---                 comments = {},
---                 conditionals = {},
---                 loops = {},
---                 functions = {},
---                 keywords = {},
---                 strings = {},
---                 variables = {},
---                 numbers = {},
---                 booleans = {},
---                 properties = {},
---                 types = {},
---             },
---             -- This is where we darken the selection color
---             custom_highlights = function(colors)
---                 return {
---                     Visual = { bg = "#28283d" }, 
---                     Search = { bg = "#45475a", fg = colors.yellow },
---                     CurSearch = { bg = colors.yellow, fg = "#000000" },
---                 }
---             end,
---             color_overrides = {
---                 mocha = {
---                     -- base = "#000000",
---                 },
---             },
---             integrations = {
---                 telescope = { enabled = true },
---                 dropbar = { enabled = true, color_mode = true },
---             },
---         })
+return {
+	"catppuccin/nvim",
+	name = "catppuccin",
+	config = function()
+require("catppuccin").setup({
+            term_colors = false,
+            transparent_background = true,
+            no_italic = true,
+            no_bold = true,
+            styles = {
+                comments = {},
+                conditionals = {},
+                loops = {},
+                functions = {},
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {},
+            },
+            -- This is where we darken the selection color
+            custom_highlights = function(colors)
+                return {
+                    Visual = { bg = "#28283d" }, 
+                    Search = { bg = "#45475a", fg = colors.yellow },
+                    CurSearch = { bg = colors.yellow, fg = "#000000" },
+                }
+            end,
+            color_overrides = {
+                mocha = {
+                    -- base = "#000000",
+                },
+            },
+            integrations = {
+                telescope = { enabled = true },
+                dropbar = { enabled = true, color_mode = true },
+            },
+        })
 
---         vim.cmd.colorscheme('catppuccin')
--- 		vim.cmd.colorscheme('catppuccin')
--- 	end
--- }
+        vim.cmd.colorscheme('catppuccin')
+		vim.cmd.colorscheme('catppuccin')
+	end
+}
 -- return {
 -- 	"He4eT/desolate.nvim",
 -- 	dependencies = { 'rktjmp/lush.nvim' },
@@ -173,16 +173,22 @@
 -- 		vim.g.minimal_transparent_background = true
 -- 	end
 -- }
-return {
-    "nickkadutskyi/jb.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-        require("jb").setup({transparent = true})
-        vim.cmd("colorscheme jb")
-    end,
-}
+-- return {
+--     "nickkadutskyi/jb.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--         require("jb").setup({
+-- 			transparent = true,
+-- 			disable_hl_args = {
+-- 				bold = true,
+-- 				italic = true,
+-- 			},
+-- 		})
+--         vim.cmd("colorscheme jb")
+--     end,
+-- }
 -- return {
 -- 	"ellisonleao/gruvbox.nvim",
 -- 	priority = 1000,

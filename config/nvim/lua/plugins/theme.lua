@@ -1,4 +1,31 @@
 -- return {
+-- 	"rebelot/kanagawa.nvim",
+-- 	config = function() 
+-- 		require('kanagawa').setup({
+-- 			compile = false,             -- enable compiling the colorscheme
+-- 			undercurl = true,            -- enable undercurls
+-- 			commentStyle = { italic = false },
+-- 			functionStyle = { italic = false },
+-- 			keywordStyle = { italic = false, bold = false },
+-- 			statementStyle = { bold = false },
+-- 			typeStyle = { italic = false},
+-- 			transparent = true,         -- do not set background color
+-- 			dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+-- 			terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+-- 			colors = {                   -- add/modify theme and palette colors
+-- 				palette = {},
+-- 				theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+-- 			},
+-- 			overrides = function(colors) -- add/modify highlights
+-- 				return {}
+-- 			end,
+-- 			theme = "dragon",              -- Load "wave" theme
+-- 		})
+
+-- 		vim.cmd.colorscheme("kanagawa")
+-- 	end
+-- }
+-- return {
 --     "dgox16/oldworld.nvim",
 --     lazy = false,
 --     priority = 1000,
@@ -173,34 +200,34 @@
 -- 		vim.g.minimal_transparent_background = true
 -- 	end
 -- }
-return {
-    "nickkadutskyi/jb.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-        require("jb").setup({
-			transparent = true,
-			disable_hl_args = {
-				bold = true,
-				italic = true,
-			},
-		})
-        vim.cmd("colorscheme jb")
-    end,
-}
 -- return {
--- 	"ellisonleao/gruvbox.nvim",
--- 	priority = 1000,
--- 	config = function()
--- 		vim.o.background = "dark"
--- 		require("gruvbox").setup({
--- 			bold = false,
--- 			transparent_mode = true,
+--     "nickkadutskyi/jb.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--         require("jb").setup({
+-- 			transparent = true,
+-- 			disable_hl_args = {
+-- 				bold = true,
+-- 				italic = true,
+-- 			},
 -- 		})
--- 		vim.cmd([[colorscheme gruvbox]])
--- 	end
+--         vim.cmd("colorscheme jb")
+--     end,
 -- }
+return {
+	"ellisonleao/gruvbox.nvim",
+	priority = 1000,
+	config = function()
+		vim.o.background = "dark"
+		require("gruvbox").setup({
+			bold = false,
+			transparent_mode = true,
+		})
+		vim.cmd([[colorscheme gruvbox]])
+	end
+}
 --
 -- return {
 -- 	"blazkowolf/gruber-darker.nvim",

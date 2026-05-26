@@ -194,6 +194,16 @@
 -- 	end
 -- }
 -- return {
+--   "navarasu/onedark.nvim",
+--   priority = 1000, -- make sure to load this before all the other start plugins
+--   config = function()
+--     require('onedark').setup {
+--       style = 'dark'
+--     }
+--     require('onedark').load()
+--   end
+-- }
+-- return {
 -- 	'Yazeed1s/minimal.nvim',
 -- 	config = function()
 -- 		vim.cmd.colorscheme("minimal")
@@ -223,9 +233,17 @@ return {
 		vim.o.background = "dark"
 		require("gruvbox").setup({
 			bold = false,
+			italic = {
+				strings = false,
+				emphasis = false,
+				comments = false,
+				operators = false,
+				folds = false,
+			},
+			contrast = "soft",
 			transparent_mode = true,
 		})
-		vim.cmd([[colorscheme gruvbox]])
+		vim.cmd.colorscheme("gruvbox")
 	end
 }
 --

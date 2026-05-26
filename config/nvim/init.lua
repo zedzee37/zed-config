@@ -67,7 +67,7 @@ vim.lsp.config("basedpyright", {
 	},
 })
 
-vim.cmd([[
-  highlight Normal guibg=#000000 ctermbg=black
-  highlight NonText guibg=#000000 ctermbg=black
-]])
+-- vim.cmd([[
+--   highlight Normal guibg=#000000 ctermbg=black
+--   highlight NonText guibg=#000000 ctermbg=black
+-- ]])

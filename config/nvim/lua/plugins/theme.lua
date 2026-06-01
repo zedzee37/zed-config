@@ -1,4 +1,21 @@
 -- return {
+-- 	"folke/tokyonight.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("tokyonight").setup({
+-- 			style = "night",
+-- 			transparent = true,
+-- 			styles = {
+-- 				comments = { italic = false },
+-- 				keywords = { italic = false },
+-- 			},
+
+-- 		})
+-- 		vim.cmd.colorscheme("tokyonight")
+-- 	end,
+-- }
+-- return {
 -- 	"rebelot/kanagawa.nvim",
 -- 	config = function() 
 -- 		require('kanagawa').setup({
@@ -94,31 +111,31 @@
 -- 		vim.cmd.colorscheme("vague")
 -- 	end
 -- }
--- return {
---     "tiagovla/tokyodark.nvim",
---     opts = {
---         -- custom options here
---     },
---     config = function(_, opts)
---         require("tokyodark").setup({
--- 			transparent_background = true,
--- 			styles = {
--- 				comments = { italic = false }, -- style for comments
--- 				keywords = { italic = false, }, -- style for keywords
--- 				identifiers = { italic = false }, -- style for identifiers
--- 				functions = { italic = false, }, -- style for functions
--- 				variables = { italic = false }, -- style for variables
--- 			},
--- 			custom_highlights = function(highlights, palette)
--- 				return {
--- 					Identifier = { fg = palette.fg },
--- 					Constant = { fg = palette.fg }
--- 				}
--- 			end
--- 		}) -- calling setup is optional
---         vim.cmd [[colorscheme tokyodark]]
---     end,
--- }
+return {
+    "tiagovla/tokyodark.nvim",
+    opts = {
+        -- custom options here
+    },
+    config = function(_, opts)
+        require("tokyodark").setup({
+			transparent_background = true,
+			styles = {
+				comments = { italic = false }, -- style for comments
+				keywords = { italic = false, }, -- style for keywords
+				identifiers = { italic = false }, -- style for identifiers
+				functions = { italic = false, }, -- style for functions
+				variables = { italic = false }, -- style for variables
+			},
+			custom_highlights = function(highlights, palette)
+				return {
+					Identifier = { fg = palette.fg },
+					Constant = { fg = palette.fg }
+				}
+			end
+		}) -- calling setup is optional
+        vim.cmd.colorscheme("tokyodark")
+    end,
+}
 -- return {
 --   "thimc/gruber-darker.nvim" ,
 --   config = function()
@@ -226,26 +243,26 @@
 --         vim.cmd("colorscheme jb")
 --     end,
 -- }
-return {
-	"ellisonleao/gruvbox.nvim",
-	priority = 1000,
-	config = function()
-		vim.o.background = "dark"
-		require("gruvbox").setup({
-			bold = false,
-			italic = {
-				strings = false,
-				emphasis = false,
-				comments = false,
-				operators = false,
-				folds = false,
-			},
-			contrast = "soft",
-			transparent_mode = true,
-		})
-		vim.cmd.colorscheme("gruvbox")
-	end
-}
+-- return {
+-- 	"ellisonleao/gruvbox.nvim",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		vim.o.background = "dark"
+-- 		require("gruvbox").setup({
+-- 			bold = false,
+-- 			italic = {
+-- 				strings = false,
+-- 				emphasis = false,
+-- 				comments = false,
+-- 				operators = false,
+-- 				folds = false,
+-- 			},
+-- 			contrast = "soft",
+-- 			transparent_mode = true,
+-- 		})
+-- 		vim.cmd.colorscheme("gruvbox")
+-- 	end
+-- }
 --
 -- return {
 -- 	"blazkowolf/gruber-darker.nvim",

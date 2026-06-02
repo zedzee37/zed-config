@@ -10,7 +10,7 @@ local colors = {
 	cyan = hsl("#85b5ba"),
 	green = hsl("#84ab60"),
 	purple = hsl("#8b7ec8"),
-	pink = hsl("#ce5d97"),
+	pink = hsl("#785880"),
 	blue = hsl("#789ff3"),
 }
 
@@ -25,7 +25,7 @@ local theme = lush(function()
 		Function { fg = colors.blue },
 		String { fg = colors.green },
 		Constant { fg = colors.cyan },
-		Type { fg = colors.purple, priority = 101 },
+		Type { fg = colors.purple, priority = 1001 },
 		Special { Type },
 		Identifier { fg = colors.white },
 		Directory { fg = colors.cyan },
@@ -33,16 +33,24 @@ local theme = lush(function()
 		Delimiter { fg = colors.white },
 		Operator { fg = colors.light_white },
 
+		BlinkCmpMenu { bg = colors.black, fg = colors.white }, 
+		BlinkCmpMenuBorder { bg = colors.black, fg = colors.dark_gray }, 
+
+		BlinkCmpMenuSelection { bg = colors.dark_gray, fg = colors.white }, 
+
+		Pmenu { BlinkCmpMenu },
+		PmenuSel { BlinkCmpMenuSelection },
+
 		sym("@punctuation.bracket") { fg = colors.white },
 
-		sym("@type")         { Type },
+		sym("@type") { Type },
 		sym("@type.builtin") { Type },
 		sym("@type.builtin.c") { Type },
 		sym("@type.primitive") { Type },
 
 		sym("@variable.member") { fg = colors.white },
-		sym("@field")           { fg = colors.white }, 
-		sym("@property")        { fg = colors.white }, 
+		sym("@field") { fg = colors.white }, 
+		sym("@property") { fg = colors.white }, 
 	}
 end)
 

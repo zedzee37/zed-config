@@ -46,6 +46,8 @@ if not vim.loop.fs_stat(pipepath) then
   vim.fn.serverstart(pipepath)
 end
 
+vim.g.have_nerd_font = true
+
 vim.lsp.enable({
 	"clangd",
 	"basedpyright",
@@ -65,8 +67,3 @@ vim.lsp.config("basedpyright", {
 		},
 	},
 })
-
--- vim.cmd([[
---   highlight Normal guibg=#000000 ctermbg=black
---   highlight NonText guibg=#000000 ctermbg=black
--- ]])

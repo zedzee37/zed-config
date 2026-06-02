@@ -1,3 +1,30 @@
+
+return {
+	'nvim-mini/mini.base16',
+	version = '*',
+	config = function()
+		require("mini.base16").setup({
+			palette = {
+				base00 = "#000000",
+				base01 = "#000000",
+				base02 = "#1e1f20",
+				base03 = "#1e1f20",
+				base04 = "#0f0f0f",
+				base05 = "#e3e3e3",
+				base06 = "#3b3b3d",
+				base07 = "#e3e3e3",
+				base08 = "#e3e3e3",
+				base09 = "#85b5ba",
+				base0A = "#8b7ec8",
+				base0B = "#84ab60",
+				base0C = "#85b5ba",
+				base0D = "#789ff3",
+				base0E = "#d56e6e",
+				base0F = "#e3e3e3",
+			}
+		})
+	end,
+}
 -- return {
 -- 	"folke/tokyonight.nvim",
 -- 	lazy = false,
@@ -111,31 +138,30 @@
 -- 		vim.cmd.colorscheme("vague")
 -- 	end
 -- }
-return {
-    "tiagovla/tokyodark.nvim",
-    opts = {
-        -- custom options here
-    },
-    config = function(_, opts)
-        require("tokyodark").setup({
-			transparent_background = true,
-			styles = {
-				comments = { italic = false }, -- style for comments
-				keywords = { italic = false, }, -- style for keywords
-				identifiers = { italic = false }, -- style for identifiers
-				functions = { italic = false, }, -- style for functions
-				variables = { italic = false }, -- style for variables
-			},
-			custom_highlights = function(highlights, palette)
-				return {
-					Identifier = { fg = palette.fg },
-					Constant = { fg = palette.fg }
-				}
-			end
-		}) -- calling setup is optional
-        vim.cmd.colorscheme("tokyodark")
-    end,
-}
+-- return {
+--     "tiagovla/tokyodark.nvim",
+--     opts = {
+--         -- custom options here
+--     },
+--     config = function(_, opts)
+--         require("tokyodark").setup({
+-- 			transparent_background = true,
+-- 			styles = {
+-- 				comments = { italic = false }, -- style for comments
+-- 				keywords = { italic = false, }, -- style for keywords
+-- 				identifiers = { italic = false }, -- style for identifiers
+-- 				functions = { italic = false, }, -- style for functions
+-- 				variables = { italic = false }, -- style for variables
+-- 			},
+-- 			custom_highlights = function(highlights, palette)
+-- 				return {
+-- 					Identifier = { fg = palette.fg },
+-- 				}
+-- 			end
+-- 		}) -- calling setup is optional
+--         vim.cmd.colorscheme("tokyodark")
+--     end,
+-- }
 -- return {
 --   "thimc/gruber-darker.nvim" ,
 --   config = function()

@@ -3,26 +3,26 @@ return {
 	'nvim-mini/mini.base16',
 	version = '*',
 	config = function()
-		require("mini.base16").setup({
-			palette = {
-				base00 = "#000000",
-				base01 = "#000000",
-				base02 = "#1e1f20",
-				base03 = "#1e1f20",
-				base04 = "#0f0f0f",
-				base05 = "#e3e3e3",
-				base06 = "#3b3b3d",
-				base07 = "#e3e3e3",
-				base08 = "#ce5d97",
-				base09 = "#85b5ba",
-				base0A = "#8b7ec8",
-				base0B = "#84ab60",
-				base0C = "#85b5ba",
-				base0D = "#789ff3",
-				base0E = "#d56e6e",
-				base0F = "#e3e3e3",
-			}
-		})
+		-- require("mini.base16").setup({
+		-- 	palette = {
+		-- 		base00 = "#000000",
+		-- 		base01 = "#000000",
+		-- 		base02 = "#1e1f20",
+		-- 		base03 = "#1e1f20",
+		-- 		base04 = "#0f0f0f",
+		-- 		base05 = "#e3e3e3",
+		-- 		base06 = "#3b3b3d",
+		-- 		base07 = "#e3e3e3",
+		-- 		base08 = "#ce5d97",
+		-- 		base09 = "#85b5ba",
+		-- 		base0A = "#8b7ec8",
+		-- 		base0B = "#84ab60",
+		-- 		base0C = "#85b5ba",
+		-- 		base0D = "#789ff3",
+		-- 		base0E = "#d56e6e",
+		-- 		base0F = "#e3e3e3",
+		-- 	}
+		-- })
 	end,
 }
 -- return {

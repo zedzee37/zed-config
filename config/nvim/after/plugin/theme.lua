@@ -1,0 +1,49 @@
+local lush = require("lush")
+local hsl = lush.hsl
+
+local colors = {
+	black = hsl("#000000"),
+	dark_gray = hsl("#1e1f20"),
+	white = hsl("#e3e3e3"),
+	red = hsl("#d56e6e"),
+	cyan = hsl("#85b5ba"),
+	green = hsl("#84ab60"),
+	purple = hsl("#8b7ec8"),
+	pink = hsl("#ce5d97"),
+	blue = hsl("#789ff3"),
+}
+
+local theme = lush(function()
+	return {
+		Normal { bg = colors.black, fg = colors.white },
+		Visual { bg = colors.dark_gray },
+		CursorLine { bg = Normal.bg },
+		StatusLine { bg = Normal.bg.lighten(10) },
+
+		Keyword { fg = colors.red }, 
+		Function { fg = colors.blue },
+		String { fg = colors.green },
+		Constant { fg = colors.cyan },
+		Type { fg = colors.purple, priority = 101 },
+		Special { Type },
+		Identifier { fg = colors.white },
+		Directory { fg = colors.cyan },
+		Error { fg = colors.red },
+		Delimiter { fg = colors.white },
+
+		sym("@punctuation.bracket") { fg = colors.white },
+
+		sym("@type")         { Type },
+		sym("@type.builtin") { Type },
+		sym("@type.builtin.c") { Type },
+		sym("@type.primitive") { Type },
+
+		sym("@variable.member") { fg = colors.white },
+		sym("@field")           { fg = colors.white }, 
+		sym("@property")        { fg = colors.white }, 
+	}
+end)
+
+lush.apply(theme)
+
+return theme

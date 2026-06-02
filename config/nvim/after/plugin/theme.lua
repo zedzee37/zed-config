@@ -5,6 +5,7 @@ local colors = {
 	black = hsl("#000000"),
 	dark_gray = hsl("#1e1f20"),
 	white = hsl("#e3e3e3"),
+	light_white = hsl("#9d9d9d"),
 	red = hsl("#d56e6e"),
 	cyan = hsl("#85b5ba"),
 	green = hsl("#84ab60"),
@@ -30,6 +31,7 @@ local theme = lush(function()
 		Directory { fg = colors.cyan },
 		Error { fg = colors.red },
 		Delimiter { fg = colors.white },
+		Operator { fg = colors.light_white },
 
 		sym("@punctuation.bracket") { fg = colors.white },
 

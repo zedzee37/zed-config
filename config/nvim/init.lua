@@ -9,9 +9,9 @@ vim.diagnostic.config({
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 8
-vim.opt.softtabstop = 8
-vim.opt.shiftwidth = 8
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.wrap = false
 vim.opt.autoindent = true
@@ -40,11 +40,11 @@ vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
 vim.opt.foldlevelstart = 99
 
--- godot stuff
-local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"
-if not vim.loop.fs_stat(pipepath) then
-  vim.fn.serverstart(pipepath)
-end
+-- -- godot stuff
+-- local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"
+-- if not vim.loop.fs_stat(pipepath) then
+--   vim.fn.serverstart(pipepath)
+-- end
 
 vim.g.have_nerd_font = true
 

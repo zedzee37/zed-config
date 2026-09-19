@@ -14,7 +14,8 @@ local colors = {
 	blue = hsl("#789ff3"),
 }
 
-local theme = lush(function()
+local theme = lush(function(injected_functions)
+	local sym = injected_functions.sym
 	return {
 		Normal { bg = colors.black, fg = colors.white },
 		Visual { bg = colors.dark_gray },
@@ -53,6 +54,8 @@ local theme = lush(function()
 
 		sym("@variable.member") { fg = colors.white },
 		sym("@field") { fg = colors.white }, 
+		sym("@function") { Function }, 
+		sym("@function.call") { Function }, 
 		sym("@property") { fg = colors.white }, 
 	}
 end)

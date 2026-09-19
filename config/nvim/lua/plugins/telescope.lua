@@ -1,9 +1,9 @@
-return {
-	'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
+return { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0',
 	dependencies = { 'nvim-lua/plenary.nvim' },
 	config = function()
 		local builtin = require('telescope.builtin')
 		local telescope = require("telescope")
+		local utils = require("telescope.utils")
 
 		telescope.setup({
 			extensions = {
@@ -20,6 +20,8 @@ return {
 		vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 		vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 		vim.keymap.set('n', '<leader>pg', builtin.live_grep)
+		vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ cwd = utils.buffer_dir() }) end, {})
+		vim.keymap.set('n', '<leader>gg', builtin.grep_string)
 		vim.keymap.set('n', '<leader>s', builtin.lsp_document_symbols, {})
 		vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, {})
 		vim.keymap.set('n', '<leader>u', builtin.lsp_references, {})

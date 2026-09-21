@@ -1,9 +1,16 @@
 return {
-  'Wansmer/treesj',
-  keys = { },
-  dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
-  config = function()
-    require('treesj').setup({
-	})
-  end,
+	'Wansmer/treesj',
+	keys = { },
+	dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
+	config = function()
+		local treesj = require('treesj')
+		treesj.setup({})
+		vim.keymap.set('n', '<leader>l', function()
+			treesj.toggle({
+				split = {
+					recursive = true,
+				},
+			})
+		end)
+	end,
 }

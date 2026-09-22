@@ -60,4 +60,5 @@ local theme = lush(function(injected_functions)
 	}
 end)
 
--- lush.apply(theme)
+lush.apply(theme)
+return theme

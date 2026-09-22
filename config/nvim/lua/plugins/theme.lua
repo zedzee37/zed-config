@@ -1,30 +1,4 @@
 
-return {
-	'nvim-mini/mini.base16',
-	version = '*',
-	config = function()
-		-- require("mini.base16").setup({
-		-- 	palette = {
-		-- 		base00 = "#000000",
-		-- 		base01 = "#000000",
-		-- 		base02 = "#1e1f20",
-		-- 		base03 = "#1e1f20",
-		-- 		base04 = "#0f0f0f",
-		-- 		base05 = "#e3e3e3",
-		-- 		base06 = "#3b3b3d",
-		-- 		base07 = "#e3e3e3",
-		-- 		base08 = "#ce5d97",
-		-- 		base09 = "#85b5ba",
-		-- 		base0A = "#8b7ec8",
-		-- 		base0B = "#84ab60",
-		-- 		base0C = "#85b5ba",
-		-- 		base0D = "#789ff3",
-		-- 		base0E = "#d56e6e",
-		-- 		base0F = "#e3e3e3",
-		-- 	}
-		-- })
-	end,
-}
 -- return {
 -- 	"folke/tokyonight.nvim",
 -- 	lazy = false,
@@ -103,41 +77,41 @@ return {
 --         vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#333333", bold = true }) 
 -- 	end
 -- }
--- return {
--- 	'https://github.com/vague-theme/vague.nvim',
--- 	config = function()
--- 		require("vague").setup({
--- 			transparent = true,
--- 			italic = false,
--- 			colors = {
--- 				-- bg = '#141415',
--- 				-- inactiveBg = '#1c1c24',
--- 				-- fg = '#cdcdcd',
--- 				-- floatBorder = '#878787',
--- 				-- line = '#252530',
--- 				-- comment = '#606079',
--- 				-- builtin = '#b4d4cf',
--- 				-- func = '#c48282',
--- 				-- string = '#e8b589',
--- 				-- number = '#e0a363',
--- 				-- property = '#c3c3d5',
--- 				-- constant = '#aeaed1',
--- 				-- parameter = '#bb9dbd',
--- 				-- visual = '#333738',
--- 				-- error = '#d8647e',
--- 				-- warning = '#f3be7c',
--- 				-- hint = '#7e98e8',
--- 				-- operator = '#90a0b5',
--- 				-- keyword = '#6e94b2',
--- 				-- type = '#9bb4bc',
--- 				-- search = '#405065',
--- 				-- plus = '#7fa563',
--- 				-- delta = '#f3be7c',
--- 			},
--- 		})
--- 		vim.cmd.colorscheme("vague")
--- 	end
--- }
+return {
+	'https://github.com/vague-theme/vague.nvim',
+	config = function()
+		require("vague").setup({
+			transparent = true,
+			italic = false,
+			colors = {
+				-- bg = '#141415',
+				-- inactiveBg = '#1c1c24',
+				-- fg = '#cdcdcd',
+				-- floatBorder = '#878787',
+				-- line = '#252530',
+				-- comment = '#606079',
+				-- builtin = '#b4d4cf',
+				-- func = '#c48282',
+				-- string = '#e8b589',
+				-- number = '#e0a363',
+				-- property = '#c3c3d5',
+				-- constant = '#aeaed1',
+				-- parameter = '#bb9dbd',
+				-- visual = '#333738',
+				-- error = '#d8647e',
+				-- warning = '#f3be7c',
+				-- hint = '#7e98e8',
+				-- operator = '#90a0b5',
+				-- keyword = '#6e94b2',
+				-- type = '#9bb4bc',
+				-- search = '#405065',
+				-- plus = '#7fa563',
+				-- delta = '#f3be7c',
+			},
+		})
+		vim.cmd.colorscheme("vague")
+	end
+}
 -- return {
 --     "tiagovla/tokyodark.nvim",
 --     opts = {
